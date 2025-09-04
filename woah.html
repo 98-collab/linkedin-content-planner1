@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Content Draft Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f2ef;
+        }
+        .linkedin-primary {
+            background-color: #0a66c2;
+        }
+        .linkedin-text {
+            color: #0a66c2;
+        }
+        .linkedin-border {
+            border-color: #e0e0e0;
+        }
+        .text-post-icon::before {
+            content: "✍️";
+        }
+        .image-post-icon::before {
+            content: "🖼️";
+        }
+        .carousel-post-icon::before {
+            content: "🎞️";
+        }
+        /* Custom styles for the carousel effect */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-slide {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b linkedin-border">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center max-w-7xl">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="#0a66c2" class="h-8 w-8">
+                    <path d="M20.5 2H3.5A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zm-1.5-9A1.5 1.5 0 115 8.5 1.5 1.5 0 016.5 10zm11.5 9h-3v-5.5c0-1.2-.4-2-1.5-2A2 2 0 0010 11.5v7.5H7v-9h3v1c.5-.8 1.5-1.5 3-1.5 3.5 0 4 2.3 4 5.7z"></path>
+                </svg>
+                <div class="hidden md:block bg-[#eef3f8] px-3 py-1.5 rounded-md text-sm text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="inline-block align-text-bottom mr-1 h-4 w-4">
+                        <path d="M12 9H4a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v3a2 2 0 01-2 2zM4 3a1 1 0 00-1 1v3a1 1 0 001 1h8a1 1 0 001-1V4a1 1 0 00-1-1zm6 10a1 1 0 00-1-1H7a1 1 0 00-1 1v2h4zM8 9a1 1 0 00-1-1H4a1 1 0 00-1 1v2a1 1 0 001 1h4zm6 0a1 1 0 00-1-1h-3a1 1 0 00-1 1v2a1 1 0 001 1h3z"></path>
+                    </svg>
+                    Search
+                </div>
+            </div>
+            <div class="flex items-center space-x-6 text-gray-600 font-medium text-sm">
+                <div class="flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="h-6 w-6">
+                        <path d="M23 9v2.5a.5.5 0 01-.5.5h-16a.5.5 0 010-1h15V9zM20 12.5a.5.5 0 01-.5.5h-13a.5.5 0 010-1h12zM17 16a.5.5 0 01-.5.5h-9a.5.5 0 010-1h8z"></path>
+                    </svg>
+                    <span>Home</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <aside class="hidden lg:block w-full lg:w-1/4">
+                <div class="bg-white rounded-xl shadow-lg p-6 border linkedin-border">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-gray-300 mb-2"></div>
+                        <h2 class="font-semibold text-lg">Your Profile</h2>
+                        <p class="text-sm text-gray-500">Your mock LinkedIn profile and connections will appear here.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="flex-1 space-y-6">
+
+                <div class="bg-white rounded-xl shadow-lg p-6 border linkedin-border">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300"></div>
+                        <div class="flex-1 bg-[#eef3f8] rounded-full py-3 px-6 text-gray-500 font-medium text-lg">
+                            Start a post
+                        </div>
+                    </div>
+                    <div class="flex justify-around items-center text-gray-500 font-medium">
+                        <button class="flex items-center space-x-2 text-sm md:text-base p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                            <span class="text-post-icon text-xl"></span> <span>Post</span>
+                        </button>
+                        <button class="flex items-center space-x-2 text-sm md:text-base p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                            <span class="image-post-icon text-xl"></span> <span>Image</span>
+                        </button>
+                        <button class="flex items-center space-x-2 text-sm md:text-base p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                            <span class="carousel-post-icon text-xl"></span> <span>Carousel</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="post-templates" class="space-y-6"></div>
+
+            </div>
+
+            <aside class="hidden lg:block w-full lg:w-1/4">
+                <div class="bg-white rounded-xl shadow-lg p-6 border linkedin-border">
+                    <h3 class="font-semibold text-lg mb-2">Analytics</h3>
+                    <p class="text-sm text-gray-500">This section is for your personal notes on performance, engagement, etc.</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postTemplatesContainer = document.getElementById('post-templates');
+
+            for (let i = 1; i <= 30; i++) {
+                const dayTemplate = document.createElement('div');
+                dayTemplate.classList.add('bg-white', 'rounded-xl', 'shadow-lg', 'border', 'linkedin-border', 'p-6');
+                dayTemplate.id = `day-template-${i}`; // Add an ID for easy selection
+                dayTemplate.innerHTML = `
+                    <div class="flex justify-between items-center mb-4 border-b linkedin-border pb-4">
+                        <h2 class="font-bold text-xl">Day ${i}</h2>
+                        <div class="flex space-x-4">
+                            <button class="template-selector p-2 rounded-full hover:bg-gray-200 transition-colors" data-template="text" data-day="${i}">
+                                <span class="text-post-icon text-2xl"></span>
+                            </button>
+                            <button class="template-selector p-2 rounded-full hover:bg-gray-200 transition-colors" data-template="image" data-day="${i}">
+                                <span class="image-post-icon text-2xl"></span>
+                            </button>
+                            <button class="template-selector p-2 rounded-full hover:bg-gray-200 transition-colors" data-template="carousel" data-day="${i}">
+                                <span class="carousel-post-icon text-2xl"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="template-content-${i}" class="space-y-4">
+                        <p class="text-sm text-gray-500 italic">Select a post type above to begin drafting your content for Day ${i}.</p>
+                    </div>
+                `;
+                postTemplatesContainer.appendChild(dayTemplate);
+            }
+
+            const renderTemplate = (day, type) => {
+                const container = document.getElementById(`template-content-${day}`);
+                let contentHTML = '';
+
+                switch (type) {
+                    case 'text':
+                        contentHTML = `
+                            <textarea id="post-text-${day}" rows="10" placeholder="Type your text post here..." class="w-full p-4 border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-linkedin-primary transition-all"></textarea>
+                        `;
+                        break;
+                    case 'image':
+                        contentHTML = `
+                            <div class="relative w-full h-80 flex justify-center items-center bg-gray-100 rounded-lg p-6 border-2 border-dashed border-gray-300 overflow-hidden group">
+                                <span class="absolute text-gray-500 z-10 transition-opacity group-hover:opacity-0">Drag & drop your image or click to select a file.</span>
+                                <img id="image-preview-${day}" class="absolute inset-0 w-full h-full object-contain z-0 transition-opacity opacity-0" src="" alt="Image Preview">
+                            </div>
+                            <input type="file" accept="image/*" class="hidden" id="image-file-${day}" onchange="handleImageChange(event, 'image-preview-${day}')">
+                            <button onclick="document.getElementById('image-file-${day}').click()" class="linkedin-primary text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors">
+                                Select Image
+                            </button>
+                            <textarea id="image-caption-${day}" rows="4" placeholder="Write a caption for your image post..." class="w-full p-4 border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-linkedin-primary transition-all"></textarea>
+                        `;
+                        break;
+                    case 'carousel':
+                        contentHTML = `
+                            <div class="relative w-full h-80 bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 overflow-hidden" data-current-slide="0" id="carousel-container-${day}">
+                                <div class="carousel-slides" id="carousel-slides-${day}">
+                                    </div>
+                                <button onclick="changeCarouselSlide(${day}, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white shadow-md z-10 hover:bg-gray-100 transition-colors opacity-0 hidden" id="carousel-prev-btn-${day}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+                                <button onclick="changeCarouselSlide(${day}, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white shadow-md z-10 hover:bg-gray-100 transition-colors opacity-0 hidden" id="carousel-next-btn-${day}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                                <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2 z-10" id="carousel-indicators-${day}">
+                                    </div>
+                            </div>
+                            <button onclick="addCarouselSlide(${day})" class="linkedin-primary text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors">
+                                Add another image
+                            </button>
+                            <textarea id="carousel-caption-${day}" rows="4" placeholder="Write a caption for your carousel..." class="w-full p-4 border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-linkedin-primary transition-all"></textarea>
+                        `;
+                        break;
+                }
+                container.innerHTML = contentHTML;
+                // Add an event listener to the newly created textarea for autosaving
+                const newTextarea = container.querySelector('textarea');
+                if (newTextarea) {
+                    newTextarea.addEventListener('input', autosave);
+                }
+                // For carousel, add the first two slides automatically
+                if (type === 'carousel') {
+                    addCarouselSlide(day, true);
+                    addCarouselSlide(day);
+                }
+                // Load and restore the state for the day
+                loadState();
+            };
+
+            // This function handles displaying the selected image.
+            window.handleImageChange = (event, imageId) => {
+                const file = event.target.files[0];
+                const day = imageId.split('-')[2];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = document.getElementById(imageId);
+                        img.src = e.target.result;
+                        img.style.opacity = '1';
+                        // Save image as base64 string to local storage
+                        autosave();
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+
+            // This function adds a new image input for a carousel.
+            window.addCarouselSlide = (day, show = false) => {
+                const slidesContainer = document.getElementById(`carousel-slides-${day}`);
+                const indicatorsContainer = document.getElementById(`carousel-indicators-${day}`);
+                const totalSlides = slidesContainer.children.length;
+
+                const slideElement = document.createElement('div');
+                slideElement.classList.add('carousel-slide', 'flex-shrink-0', 'relative');
+                
+                // Placeholder content and file input
+                slideElement.innerHTML = `
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-gray-500">Image ${totalSlides + 1}</span>
+                    </div>
+                    <img id="carousel-image-preview-${day}-${totalSlides}" class="absolute inset-0 w-full h-full object-contain" src="" alt="Image Preview" style="opacity: 0;">
+                    <input type="file" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="handleImageChange(event, 'carousel-image-preview-${day}-${totalSlides}')">
+                    <button onclick="removeCarouselSlide(this.parentElement, ${day})" class="absolute top-2 right-2 p-1 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-70 transition-all z-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                `;
+                slidesContainer.appendChild(slideElement);
+
+                // Add indicator
+                const indicator = document.createElement('div');
+                indicator.classList.add('w-2', 'h-2', 'rounded-full', 'bg-gray-400', 'cursor-pointer');
+                indicator.onclick = () => showCarouselSlide(day, totalSlides);
+                indicatorsContainer.appendChild(indicator);
+
+                // Update UI state
+                updateCarouselUI(day);
+
+                // Show if it's the first slide
+                if (show) {
+                    showCarouselSlide(day, 0);
+                }
+                autosave(); // Trigger autosave
+            };
+            
+            // This function removes a slide from the carousel.
+            window.removeCarouselSlide = (slideElement, day) => {
+                const slidesContainer = document.getElementById(`carousel-slides-${day}`);
+                const slides = Array.from(slidesContainer.children);
+                const slideIndex = slides.indexOf(slideElement);
+                
+                // Remove the slide and its indicator
+                slideElement.remove();
+                document.getElementById(`carousel-indicators-${day}`).children[slideIndex].remove();
+                
+                // Update the carousel UI
+                updateCarouselUI(day);
+
+                // If the removed slide was the current one, show the previous or first one
+                const currentSlideIndex = parseInt(document.getElementById(`carousel-container-${day}`).dataset.currentSlide);
+                if (slideIndex === currentSlideIndex) {
+                    showCarouselSlide(day, Math.max(0, currentSlideIndex - 1));
+                }
+                autosave(); // Trigger autosave
+            };
+            
+            // This function shows a specific slide
+            window.showCarouselSlide = (day, index) => {
+                const slidesContainer = document.getElementById(`carousel-slides-${day}`);
+                const container = document.getElementById(`carousel-container-${day}`);
+                const totalSlides = slidesContainer.children.length;
+                
+                if (index < 0 || index >= totalSlides) {
+                    return;
+                }
+
+                container.dataset.currentSlide = index;
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+                
+                updateCarouselUI(day);
+            };
+
+            // This function changes the slide by a certain amount (1 for next, -1 for previous)
+            window.changeCarouselSlide = (day, change) => {
+                const container = document.getElementById(`carousel-container-${day}`);
+                const slidesContainer = document.getElementById(`carousel-slides-${day}`);
+                const totalSlides = slidesContainer.children.length;
+                let currentSlideIndex = parseInt(container.dataset.currentSlide);
+                let newIndex = currentSlideIndex + change;
+                
+                if (newIndex >= totalSlides) {
+                    newIndex = 0; // Loop back to the start
+                } else if (newIndex < 0) {
+                    newIndex = totalSlides - 1; // Loop to the end
+                }
+
+                showCarouselSlide(day, newIndex);
+            };
+
+            // This function updates the visibility of the arrows and the active indicator
+            window.updateCarouselUI = (day) => {
+                const container = document.getElementById(`carousel-container-${day}`);
+                const slidesContainer = document.getElementById(`carousel-slides-${day}`);
+                const prevBtn = document.getElementById(`carousel-prev-btn-${day}`);
+                const nextBtn = document.getElementById(`carousel-next-btn-${day}`);
+                const indicatorsContainer = document.getElementById(`carousel-indicators-${day}`);
+                const currentSlideIndex = parseInt(container.dataset.currentSlide);
+                const totalSlides = slidesContainer.children.length;
+                
+                if (totalSlides > 1) {
+                    prevBtn.classList.remove('opacity-0', 'hidden');
+                    nextBtn.classList.remove('opacity-0', 'hidden');
+                    indicatorsContainer.classList.remove('hidden');
+                } else {
+                    prevBtn.classList.add('opacity-0', 'hidden');
+                    nextBtn.classList.add('opacity-0', 'hidden');
+                    indicatorsContainer.classList.add('hidden');
+                }
+                
+                Array.from(indicatorsContainer.children).forEach((indicator, index) => {
+                    if (index === currentSlideIndex) {
+                        indicator.classList.add('bg-gray-800');
+                        indicator.classList.remove('bg-gray-400');
+                    } else {
+                        indicator.classList.remove('bg-gray-800');
+                        indicator.classList.add('bg-gray-400');
+                    }
+                });
+            };
+
+            // Autosave function
+            const autosave = () => {
+                const data = {};
+                for (let i = 1; i <= 30; i++) {
+                    const templateContainer = document.getElementById(`template-content-${i}`);
+                    const selectedType = templateContainer.querySelector('textarea, input[type="file"]')?.id?.split('-')[1] || null;
+
+                    if (selectedType) {
+                        data[`day-${i}-type`] = selectedType;
+                        if (selectedType === 'text') {
+                            const textarea = document.getElementById(`post-text-${i}`);
+                            data[`day-${i}-content`] = textarea ? textarea.value : '';
+                        } else if (selectedType === 'image') {
+                            const caption = document.getElementById(`image-caption-${i}`);
+                            const image = document.getElementById(`image-preview-${i}`);
+                            data[`day-${i}-caption`] = caption ? caption.value : '';
+                            data[`day-${i}-image`] = image ? image.src : '';
+                        } else if (selectedType === 'carousel') {
+                            const caption = document.getElementById(`carousel-caption-${i}`);
+                            const slides = document.getElementById(`carousel-slides-${i}`).querySelectorAll('img');
+                            const imageSources = Array.from(slides).map(img => img.src);
+                            data[`day-${i}-caption`] = caption ? caption.value : '';
+                            data[`day-${i}-images`] = imageSources;
+                        }
+                    }
+                }
+                localStorage.setItem('linkedinContentDraft', JSON.stringify(data));
+                console.log("Content autosaved!");
+            };
+
+            // Function to restore state from local storage
+            const loadState = () => {
+                const savedData = JSON.parse(localStorage.getItem('linkedinContentDraft'));
+                if (!savedData) return;
+
+                for (let i = 1; i <= 30; i++) {
+                    const type = savedData[`day-${i}-type`];
+                    if (type) {
+                        renderTemplate(i, type);
+                        
+                        // Wait a moment for the elements to be rendered before populating
+                        setTimeout(() => {
+                            if (type === 'text') {
+                                const textarea = document.getElementById(`post-text-${i}`);
+                                if (textarea && savedData[`day-${i}-content`]) {
+                                    textarea.value = savedData[`day-${i}-content`];
+                                }
+                            } else if (type === 'image') {
+                                const caption = document.getElementById(`image-caption-${i}`);
+                                const image = document.getElementById(`image-preview-${i}`);
+                                if (caption && savedData[`day-${i}-caption`]) {
+                                    caption.value = savedData[`day-${i}-caption`];
+                                }
+                                if (image && savedData[`day-${i}-image`]) {
+                                    image.src = savedData[`day-${i}-image`];
+                                    image.style.opacity = '1';
+                                }
+                            } else if (type === 'carousel') {
+                                const caption = document.getElementById(`carousel-caption-${i}`);
+                                if (caption && savedData[`day-${i}-caption`]) {
+                                    caption.value = savedData[`day-${i}-caption`];
+                                }
+                                
+                                const slidesContainer = document.getElementById(`carousel-slides-${i}`);
+                                const savedImages = savedData[`day-${i}-images`] || [];
+                                
+                                // Clear existing slides and re-add them from saved data
+                                slidesContainer.innerHTML = '';
+                                document.getElementById(`carousel-indicators-${i}`).innerHTML = '';
+                                
+                                savedImages.forEach((imageSrc, index) => {
+                                    addCarouselSlide(i, false);
+                                    const image = document.getElementById(`carousel-image-preview-${i}-${index}`);
+                                    if (image) {
+                                        image.src = imageSrc;
+                                        image.style.opacity = '1';
+                                    }
+                                });
+                                showCarouselSlide(i, 0); // Show the first slide
+                            }
+                        }, 50); // Small delay to ensure elements are in the DOM
+                    }
+                }
+            };
+            
+            // Add a single event listener to the main container for efficiency
+            postTemplatesContainer.addEventListener('input', (event) => {
+                if (event.target.tagName === 'TEXTAREA') {
+                    autosave();
+                }
+            });
+
+            // Initial setup on page load
+            document.querySelectorAll('.template-selector').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const day = event.currentTarget.dataset.day;
+                    const type = event.currentTarget.dataset.template;
+                    
+                    // Save the selected type for the current day
+                    const data = JSON.parse(localStorage.getItem('linkedinContentDraft')) || {};
+                    data[`day-${day}-type`] = type;
+                    localStorage.setItem('linkedinContentDraft', JSON.stringify(data));
+                    
+                    renderTemplate(day, type);
+                });
+            });
+
+            // Load saved state on initial page load
+            loadState();
+        });
+    </script>
+</body>
+</html>
